@@ -12,7 +12,7 @@ COPY pom.xml .
 RUN mvn dependency:go-offline
 
 # Copy the entire project
-COPY src .
+COPY . .
 
 # Package the application
 RUN mvn clean package -DskipTests
