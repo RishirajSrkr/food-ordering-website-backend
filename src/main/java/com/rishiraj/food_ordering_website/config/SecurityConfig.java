@@ -65,6 +65,12 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
+
+        configuration.setAllowedOriginPatterns(List.of(
+                "https://food-ordering-website-frontend-customers.vercel.app",
+                "https://food-ordering-website-frontend-admin.vercel.app"
+        ));
+
         configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:5174", "https://food-ordering-website-frontend-customers.vercel.app", "https://food-ordering-website-frontend-admin.vercel.app"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")); // Allow these methods
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type")); // Allow headers
