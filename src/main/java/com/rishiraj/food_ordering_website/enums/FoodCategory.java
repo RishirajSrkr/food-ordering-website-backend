@@ -2,10 +2,12 @@ package com.rishiraj.food_ordering_website.enums;
 
 public enum FoodCategory {
     SEASONAL,
-    ORGANIC,
+    TROPICAL,
     EXOTIC,
-    LOCAL,
+    MELONS,
     CITRUS,
     BERRIES,
-    STONE_FRUITS
+    STONE_FRUITS,
+    APPLES,
+    GRAPES
 }
