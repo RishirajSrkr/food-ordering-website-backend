@@ -67,6 +67,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         List<String> listOfAllowedOrigins = List.of(
                 "https://freshfruits.rishirajsarkar.in",
+                "https://rishiraj-freshfruits-admin.vercel.app",
                 "http://localhost:5173",
                 "http://localhost:5174",
                 "https://food-ordering-website-frontend-customers.vercel.app",
