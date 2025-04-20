@@ -1,4 +1,4 @@
-**🍎 FreshFruit - Backend API 🍓**
+**🍎 FreshFruit - Backend API 🍓** (https://freshfruits.rishirajsarkar.in/)
 
 A robust Spring Boot backend that powers the FreshFruit e-commerce platform for fresh fruit delivery.
 
