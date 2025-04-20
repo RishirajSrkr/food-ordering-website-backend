@@ -34,7 +34,7 @@ public class SecurityConfig {
     }
 
     @Bean
-    public AuthenticationManager authenticationManager(){
+    public AuthenticationManager authenticationManager() {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setUserDetailsService(userDetailService);
         authenticationProvider.setPasswordEncoder(passwordEncoder());
@@ -58,17 +58,25 @@ public class SecurityConfig {
     }
 
     @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
+    public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
+        List<String> listOfAllowedOrigins = List.of(
+                "https://freshfruits.rishirajsarkar.in",
+                "http://localhost:5173",
+                "http://localhost:5174",
+                "https://food-ordering-website-frontend-customers.vercel.app",
+                "https://food-ordering-website-frontend-admin.vercel.app"
+        );
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOriginPatterns(List.of("*"));
 
-        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:5174", "https://food-ordering-website-frontend-customers.vercel.app", "https://food-ordering-website-frontend-admin.vercel.app"));
+        configuration.setAllowedOrigins(listOfAllowedOrigins);
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH")); // Allow these methods
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type")); // Allow headers
         configuration.setAllowCredentials(true); // Allow cookies or credentials
